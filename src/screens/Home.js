@@ -1,12 +1,23 @@
-import React from "react";
+import React, {
+  useEffect,
+  useCallback,
+  useState,
+  useLayoutEffect
+} from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { Input } from "react-native-elements";
-
+import { Input, Button } from "react-native-elements";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../redux/actions/actions";
 const Home = props => {
+  const [renderTimes, setRenderTimes] = useState(0);
+
+  const dis = useDispatch();
+  const handleClick = () => {
+    dis(setFilter([{ hello: false }]));
+  };
+
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Input placeholder="BASIC INPUT" errorMessage="" />
-
       <TouchableOpacity
         onPress={() => {
           props.navigation.navigate({
@@ -16,6 +27,7 @@ const Home = props => {
       >
         <Text>Home</Text>
       </TouchableOpacity>
+      <Button title="Click Me" onPress={handleClick} />
     </View>
   );
 };
