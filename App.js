@@ -45,33 +45,14 @@ const AuthStack = createStackNavigator(
     loading: LoadingScreen
   },
   {
-    transitionConfig: () => fromRight(),
-    headerMode: "none"
+    transitionConfig: () => fromRight()
   }
 );
-const newNavigator = createAnimatedSwitchNavigator(
-  {
-    Loading: LoadingScreen,
-    App: AppBottomNav,
-    Auth: AuthStack
-  },
-  {
-    transition: (
-      <Transition.Together>
-        <Transition.Out
-          type="slide-bottom"
-          durationMs={400}
-          interpolation="easeIn"
-        />
-        <Transition.In
-          type="slide-bottom"
-          interpolation="easeIn"
-          durationMs={500}
-        />
-      </Transition.Together>
-    )
-  }
-);
+const newNavigator = createSwitchNavigator({
+  Loading: LoadingScreen,
+  App: AppBottomNav,
+  Auth: AuthStack
+});
 
 const NewAppContainer = createAppContainer(newNavigator);
 
@@ -119,7 +100,9 @@ export default () => {
   }
 
   //   // return <MealsNavigator />;
-  return <NewAppContainer />;
+  else {
+    return <NewAppContainer />;
+  }
 };
 // export default newAppContainer;
 

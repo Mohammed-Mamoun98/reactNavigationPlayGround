@@ -1,3 +1,5 @@
+import * as firebase from "firebase";
+
 var firebaseConfig = {
   apiKey: "AIzaSyDsQ6onrzyvfDnKksCm-CPnMWd0b_ZcA1g",
   authDomain: "socialapp-f6387.firebaseapp.com",
@@ -9,3 +11,5 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+export default firebaseConfig;

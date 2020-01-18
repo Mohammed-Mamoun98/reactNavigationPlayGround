@@ -19,6 +19,7 @@ const LoginScreen = props => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
+      .then(user => props.navigation.navigate("App"))
       .catch(error => {
         setError(reFormatError(error.toString()));
         setLoading(false);
@@ -38,6 +39,7 @@ const LoginScreen = props => {
 
       <View style={styles.input}>
         <Input
+          autoCapitalize="none"
           placeholder="johnSmith@gmail.com"
           label="Email"
           value={email}

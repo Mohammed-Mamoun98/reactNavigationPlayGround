@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Icon = props => {
-  return <MaterialCommunityIcons {...props} />;
+  return <Ionicons {...props} />;
 };
 
 export default Icon;

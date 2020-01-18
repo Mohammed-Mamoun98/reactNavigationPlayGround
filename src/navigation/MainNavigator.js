@@ -7,11 +7,18 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import { createStackNavigator } from "react-navigation-stack";
 import { StyleSheet } from "react-native";
+import Feed from "../screens/Feed";
+const homeScreenStck = createStackNavigator({
+  homeScreen: {
+    screen: HomeScreen
+  }
+});
 const AppBottomNav = createBottomTabNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: Feed,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <MaterialCommunityIcons name="home" size={24} color={tintColor} />
@@ -57,7 +64,7 @@ const AppBottomNav = createBottomTabNavigator(
       }
     },
     Profile: {
-      screen: ProfileScreen,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Ionicons name="ios-person" size={24} color={tintColor} />
