@@ -1,10 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const PostScreen = () => {
+const PostScreen = props => {
   return (
     <View style={styles.container}>
-      <Text>PostScreen</Text>
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate("Feed");
+        }}
+      >
+        <Text>PostScreen</Text>
+      </TouchableOpacity>
     </View>
   );
 };

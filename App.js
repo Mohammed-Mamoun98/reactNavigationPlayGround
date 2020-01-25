@@ -18,7 +18,9 @@ import { fromRight } from "react-navigation-transitions";
 import createAnimatedSwitchNavigator from "react-navigation-animated-switch";
 import { Transition } from "react-native-reanimated";
 import AppBottomNav from "./src/navigation/MainNavigator";
-
+import FeedStack from "./src/navigation/newNav";
+import InitNav from "./src/navigation/navigation";
+import bottomTab from "./src/navigation/newNav";
 const firebaseConfig = {
   apiKey: "AIzaSyDsQ6onrzyvfDnKksCm-CPnMWd0b_ZcA1g",
   authDomain: "socialapp-f6387.firebaseapp.com",
@@ -48,9 +50,11 @@ const AuthStack = createStackNavigator(
     transitionConfig: () => fromRight()
   }
 );
+
+//AppBottomNav
 const newNavigator = createSwitchNavigator({
   Loading: LoadingScreen,
-  App: AppBottomNav,
+  App: bottomTab,
   Auth: AuthStack
 });
 
@@ -77,7 +81,8 @@ enableScreens();
 const fetchFonts = () => {
   return Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
-    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf")
+    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+    roboto: require("./assets/fonts/Roboto-Regular.ttf")
   });
 };
 
@@ -98,31 +103,8 @@ export default () => {
       />
     );
   }
-
   //   // return <MealsNavigator />;
   else {
     return <NewAppContainer />;
   }
 };
-// export default newAppContainer;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// });
-
-// const Nav = props => {
-//   mainStore.subscribe(() => {
-//     console.log(mainStore.getState());
-//   });
-//   return (
-//     <Provider store={mainStore}>
-//       <SignUpScreen />
-//       {/* <Navigator /> */}
-//     </Provider>
-//   );
-// };

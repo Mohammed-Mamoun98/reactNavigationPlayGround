@@ -1,51 +1,44 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  FlatList
-} from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Card from "../components/reuseable/Card";
 import Constants from "expo-constants";
-import CardModel from "../components/CardModel";
 import LogoAvatar from "../components/LogoAvatar";
 import CardBody from "../components/reuseable/CardBody";
-const Feed = props => {
+const CardModel = props => {
   return (
-    <View style={styles.container}>
-      <CardModel />
-      <CardModel />
-      <FlatList />
-    </View>
+    <Card style={styles.test}>
+      <CardBody />
+      <LogoAvatar title="Motorola Droid" />
+    </Card>
   );
 };
 
-Feed.navigationOptions = navigationData => {
-  return {
-    title: "Feed",
-    header: null
-  };
-};
+//CardBody has Props : mainTitle: String , subTitle : String , imgUri : uri
+//LogoAvatar has props : title : String ,
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
     backgroundColor: "#E5E5E5",
-    marginTop: Constants.statusBarHeight,
+    marginTop: 0,
     width: "100%",
     height: "100%"
   },
   test: {
     marginTop: 25,
-    height: "40%",
+    height: "45%",
     width: "95%"
+  },
+  info: {
+    width: "90%",
+    backgroundColor: "gray",
+    height: "10%",
+    top: "15%",
+    left: "5%"
   }
 });
 
-export default Feed;
+export default CardModel;
 
 // <TouchableWithoutFeedback
 //         onPress={() => {
