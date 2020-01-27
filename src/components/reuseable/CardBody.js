@@ -5,7 +5,8 @@ const CardBody = props => {
   const {
     mainTitle = "Main Header Title ", //no more than 50 chars
     subTitle = "SubTitle", // more than 38 add three dots
-    imgUri = "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
+    imgUri = "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png",
+    url = 'https://en.reactjs.org/'
   } = props;
 
   const formatSubTitle = (title = "") => {

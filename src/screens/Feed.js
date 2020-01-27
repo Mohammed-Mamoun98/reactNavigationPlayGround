@@ -5,19 +5,21 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from "react-native";
 import Card from "../components/reuseable/Card";
 import Constants from "expo-constants";
 import CardModel from "../components/CardModel";
 import LogoAvatar from "../components/LogoAvatar";
 import CardBody from "../components/reuseable/CardBody";
+import SingleModel from "../components/SingleModel";
+import Touchable from "../components/Touchable";
 const Feed = props => {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
-      <CardModel />
-      <CardModel />
-      <FlatList />
+      <CardModel navigation={navigation} />
     </View>
   );
 };

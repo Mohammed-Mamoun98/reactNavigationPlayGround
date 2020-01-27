@@ -35,17 +35,18 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }, //top = 45 or 11%
   container: {
-    top: 45,
+    bottom: 10,
     left: "7%",
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    position: "absolute"
   },
   TitleStyle: {
     fontSize: 16,
     color: "gray",
     fontFamily: "open-sans",
-    marginLeft: "3%"
+    marginLeft: "2%"
   },
   icon: {
     marginLeft: "40%"

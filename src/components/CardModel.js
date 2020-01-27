@@ -1,15 +1,37 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity
+} from "react-native";
 import Card from "../components/reuseable/Card";
 import Constants from "expo-constants";
 import LogoAvatar from "../components/LogoAvatar";
 import CardBody from "../components/reuseable/CardBody";
+import Touchable from "./Touchable";
 const CardModel = props => {
   return (
-    <Card style={styles.test}>
-      <CardBody />
-      <LogoAvatar title="Motorola Droid" />
-    </Card>
+    <Touchable
+      onPress={() => {
+        props.navigation.navigate("Browser");
+      }}
+    >
+      <Card style={styles.test}>
+        <CardBody
+          mainTitle="Main Header Title "
+          subTitle="SubTitle"
+          imgUri="https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
+          url="https://en.reactjs.org/"
+        />
+        <LogoAvatar
+          title="Motorola Droid"
+          logoUri="https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
+        />
+      </Card>
+    </Touchable>
   );
 };
 
@@ -26,8 +48,8 @@ const styles = StyleSheet.create({
   },
   test: {
     marginTop: 25,
-    height: "45%",
-    width: "95%"
+    width: "95%",
+    height: "40%"
   },
   info: {
     width: "90%",

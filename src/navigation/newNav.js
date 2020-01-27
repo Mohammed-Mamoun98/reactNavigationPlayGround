@@ -6,7 +6,7 @@ import { Ionicons, AntDesign, Entypo } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import navStackOptions from "./navStackOptions";
 import PostScreen from "../screens/PostScreen";
-
+import Browser from "../screens/Browser";
 const FeedStack = createStackNavigator(
   {
     Feed: {
@@ -14,6 +14,9 @@ const FeedStack = createStackNavigator(
     },
     Post: {
       screen: PostScreen
+    },
+    Browser: {
+      screen: Browser
     }
   },
   navStackOptions
