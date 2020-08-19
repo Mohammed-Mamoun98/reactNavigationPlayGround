@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
   test: {
     marginTop: 25,
     width: "95%",
-    height: "40%"
+    height: "40%",
+    minHeight: "90%"
   },
   info: {
     width: "90%",

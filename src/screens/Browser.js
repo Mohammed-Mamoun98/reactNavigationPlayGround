@@ -1,18 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { TouchableNativeFeedback } from "react-native-gesture-handler";
-
+import CardModel from "../components/CardModel";
 const Browser = props => {
   return (
-    <View>
-      <TouchableNativeFeedback
-        onPress={() => {
-          props.navigation.goBack();
-        }}
-      >
-        <Text>Broweser</Text>
-      </TouchableNativeFeedback>
-    </View>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ backgroundColor: "red", flex: 1 }}
+    >
+      <View style={{ backgroundColor: "white", height: "100%" }}>
+        <CardModel />
+        <CardModel />
+        <CardModel />
+        <CardModel />
+        <CardModel />
+        <CardModel />
+      </View>
+    </ScrollView>
   );
 };
 

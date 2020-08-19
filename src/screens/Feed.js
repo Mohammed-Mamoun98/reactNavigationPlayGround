@@ -6,28 +6,23 @@ import {
   SafeAreaView,
   ScrollView,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
-import Card from "../components/reuseable/Card";
 import Constants from "expo-constants";
 import CardModel from "../components/CardModel";
-import LogoAvatar from "../components/LogoAvatar";
-import CardBody from "../components/reuseable/CardBody";
-import SingleModel from "../components/SingleModel";
-import Touchable from "../components/Touchable";
-const Feed = props => {
+const Feed = (props) => {
   const { navigation } = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <CardModel navigation={navigation} />
-    </View>
+    </SafeAreaView>
   );
 };
 
-Feed.navigationOptions = navigationData => {
+Feed.navigationOptions = (navigationData) => {
   return {
     title: "Feed",
-    header: null
+    header: null,
   };
 };
 
@@ -37,14 +32,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#E5E5E5",
     marginTop: Constants.statusBarHeight,
-    width: "100%",
-    height: "100%"
+    minHeight: "100%",
+
+    // width: "100%",
+    // height: "100%"
   },
   test: {
     marginTop: 25,
     height: "40%",
-    width: "95%"
-  }
+    width: "95%",
+  },
 });
 
 export default Feed;

@@ -2,13 +2,13 @@ import React, {
   useEffect,
   useCallback,
   useState,
-  useLayoutEffect
+  useLayoutEffect,
 } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Input, Button } from "react-native-elements";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../redux/actions/actions";
-const Home = props => {
+const Home = (props) => {
   const [renderTimes, setRenderTimes] = useState(0);
 
   const dis = useDispatch();
@@ -21,20 +21,20 @@ const Home = props => {
       <TouchableOpacity
         onPress={() => {
           props.navigation.navigate({
-            routeName: "About"
+            routeName: "About",
           });
         }}
       >
-        <Text>Home</Text>
+        <Text>Home!</Text>
       </TouchableOpacity>
       <Button title="Click Me" onPress={handleClick} />
     </View>
   );
 };
 
-Home.navigationOptions = navigationData => {
+Home.navigationOptions = (navigationData) => {
   return {
-    title: "Home"
+    title: "Home",
   };
 };
 
